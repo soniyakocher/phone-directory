@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from "./Header";
+import './App.css'
 
 class App extends Component {
   render() {
@@ -7,10 +8,10 @@ class App extends Component {
       
       <div>
         <Header/>
-        <button>Add</button>
-        <div>
-          <span>Name</span> <br />
-          <span>Phone</span>
+        <button id="add-btn">Add</button>
+        <div className="main">
+          <span id="name">Name</span> <br />
+          <span id="phone">Phone</span>
         </div>
       </div>
 
