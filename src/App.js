@@ -3,20 +3,17 @@ import Header from "./Header";
 import './App.css'
 
 class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      subscribersListToShow: []
+    }
+  }
+ 
   render() {
 
-    let subscribers = [
-      {
-        id:1,
-        name:"shrishti",
-        phone:"99999999"
-      },
-      {
-        id:2,
-        name:"shilpa",
-        phone:"8888888"
-      }
-    ];
+    
     return (
       <div>
       <Header heading="Phone Directory" />
@@ -29,13 +26,13 @@ class App extends Component {
           </div>
 
         {
-          subscribers.map(sub =>{ 
+          this.state.subscribersListToShow.map(sub =>{ 
             return <div  key={sub.id}className="grid-container">
               <span className = "grid-item">{sub.name}</span>
               <span className = "grid-item"> {sub.phone}</span>
               
                <span className="grid-item action-btn-container ">
-               <button className="custom-btn delete-btn">Delete</button>
+               <button className="custom-btn delete-btn" onClick={this.clickHandler.bind(this,"Delete Clicked")}>Delete</button>
                </span>
                </div>
              
